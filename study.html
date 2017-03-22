@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="text" id="a">
+<span id="b" style="display:inline-block;padding-left:20px;padding-right:20px; background:red"> </span>
+</body>
+<script>
+    /**
+     * 变量提升，函数提升
+     * @type {number}
+     */
+    /*var a = 1;
+    function a () {
+        alert(a)
+    }
+    alert(a)
+    a();*/
+
+    /**
+     * call this 函数中的this 以及 对象的this
+     * @type {number}
+     */
+    /*var a = 1;
+    function Fn1 () {
+        var a = 2;
+        console.log("this.a = " + this.a);
+        console.log("a = " + a);
+        console.log(this == window)
+        alert(this.a + a);
+    }
+
+    function Fn2 () {
+        var a = 10;
+        //alert(this.Fn1 == window.Fn1);
+        Fn1();
+    }
+    Fn2();
+
+    var Fn3 = function () {
+        this.a = 3;
+    };
+    Fn3.prototype = {
+        a: 4
+    };
+    var fn3 = new Fn3();
+    Fn1.call(fn3);*/
+
+    /**
+     * 函数声明提升，正好将函数中的全局变量--》局部变量，导致全局变量并没有被改写，所以最终全局变量还是1；
+     * @type {number}
+     */
+    /*var foo = 1;
+    function bar () {
+        alert(foo);
+        foo = 10;
+        return;
+        function foo () {};
+    }
+    bar();
+    alert(foo);*/
+
+    /**
+     * 这是一道sb题
+     * 连续赋值
+     * foo.x = (foo = {n:2}),括号内的运算结果是{n:2},所以foo.x就为{n:2}, bar和foo共享内存，所以bar.x被赋值
+     * 然后foo又被赋值重写，所以foo.x就为undefind了
+     * @type {{n: number}}
+     */
+    /*var foo = {n:1};
+    var bar = foo;
+    foo.x = foo = {n:2};
+    //console.log(foo.x);
+    //console.log(bar.x);
+
+    console.log((a={n:2}))*/
+
+    /**
+     * 这个题就是考的this指针指向问题，1：指向调用者  2：普通函数指向window
+     * @type {string}
+     */
+    /*var name = "a";
+    var obj = {
+        name : "b",
+        prop : {
+            name : "c",
+            getname : function () {
+                return this.name;
+            }
+        }
+    };
+    console.log(obj.prop.getname())
+    var test = obj.prop.getname;
+    console.log(test());*/
+
+    /*var a = 10;
+    function foo () {
+        console.log(a);
+    }
+    (function (func) {
+        var a = 20;
+        console.log(func);
+        func();
+    })(foo)*/
+
+    /**
+     * sb坑题
+     * @type {Array}
+     */
+    /*var data = [];
+    for (var k = 0; k <3; k++) {
+        data[k] = function () {
+            console.log(k);
+        }
+    }
+
+    data[0]();
+    data[1]();
+    data[2]();*/
+
+    /*var a = 10;
+    function test () {
+        console.log(this === window)
+        console.log(this.a);
+    }
+    //test();
+
+    function obj () {
+        var a = 20;
+        console.log("a:"+a)
+        test();
+    }
+    obj();*/
+
+    /**
+     * 双向绑定实现
+     */
+
+    var obj = {};
+    Object.defineProperty(obj, "attr", {
+        get: function () {},
+        set: function (val) {
+
+        }
+    });
+
+
+
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
