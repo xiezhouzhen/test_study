@@ -1,2 +1,31 @@
+
+
+3.3 一天
+3.7 2h  （3.20晚上加班两个小时）
+3.10 一天
+3.18 一天
+3.21  3.21  3.24 三天
+
+报销126
+
+
 queryselect
 queryselectall
+
+cdn正确使用CDN，加快加载速度及优化用户体验;
+熟悉使用Jade模板引擎，熟悉Bower，Gulp，Webpack等常用前端开发工具
+了解XSS防范技术。 
+
+npm, bower and grunt  gulp，
+babel
+
+npm --save    --save dev
+bower 依赖冲突， 交叉依赖
+
+
+jQuery ： deffered  和 promise
+
+
+
+重绘 重排
+bbtQWE123
